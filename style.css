@@ -1,0 +1,234 @@
+/* Reset global e bloqueio de scroll */
+html,
+body {
+  width: 100%;
+  height: 100vh; /* Altura exata do ecrã */
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a !important;
+  overflow: hidden; /* Remove o scroll de vez */
+}
+
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --accent-color: #38bdf8;
+  --text-main: #ffffff;
+  --text-muted: #cbd5e1;
+  --card-shadow: rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container principal */
+.card-container {
+  width: 350px;
+  height: 560px; /* Altura mantida para caber tudo */
+  perspective: 1200px;
+  position: relative;
+}
+
+/* Botão de Idioma flutuante */
+.lang-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Espaço entre a bandeira e o texto */
+}
+
+.lang-toggle:hover {
+  background: var(--accent-color);
+  color: #0f172a;
+}
+
+/* Elemento do cartão que irá girar */
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Estilo das faces */
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px var(--card-shadow);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: var(--text-main);
+}
+
+/* Frente */
+.card-front .avatar-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent-color), #818cf8);
+  margin-top: 10px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #334155;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 8px;
+  color: var(--text-main);
+}
+
+.role {
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.info-group {
+  margin: 10px 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-group i {
+  color: var(--accent-color);
+  margin-right: 6px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin: 10px 0;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  transition:
+    color 0.3s,
+    transform 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Verso */
+.card-back {
+  transform: rotateY(180deg);
+  align-items: flex-start;
+  text-align: left;
+}
+
+.card-back h2 {
+  font-size: 1.25rem;
+  color: var(--accent-color);
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.education-list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.education-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.education-list strong {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.education-list span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: block;
+  white-space: normal;
+}
+
+/* Botões de Girar */
+.flip-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.2s;
+  margin-top: auto;
+}
+
+.flip-btn:hover {
+  background-color: var(--accent-color);
+  color: #0f172a;
+  transform: scale(1.02);
+}

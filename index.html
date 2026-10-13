@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luiz Felipe | Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="card-container">
+      <!-- Botão de Idioma (agora dentro da área do cartão) -->
+      <button id="lang-btn" class="lang-toggle">English</button>
+
+      <div class="card" id="card">
+        <!-- FRENTE -->
+        <div class="card-face card-front">
+          <div class="avatar-wrapper">
+            <img src="1625166363796.jpg" alt="Foto de Perfil" class="avatar" />
+          </div>
+          <h1 class="name">Luiz Felipe Andrade</h1>
+          <p class="role" data-i18n="role">
+            Desenvolvedor de Software em formação
+          </p>
+
+          <div class="info-group">
+            <p data-i18n="languages">
+              <i class="fa-solid fa-language"></i> Idiomas: Português, Inglês
+            </p>
+            <p data-i18n="location">
+              <i class="fa-solid fa-location-dot"></i> Rio de Janeiro, Brasil
+            </p>
+          </div>
+
+          <div class="social-links">
+            <a
+              href="https://github.com/luizfelipeandrade"
+              target="_blank"
+              title="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lfandrade"
+              target="_blank"
+              title="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://house-alone-studios.itch.io/"
+              target="_blank"
+              title="Itch.io"
+            >
+              <i class="fa-brands fa-itch-io"></i>
+            </a>
+            <a href="mailto:luizfelipeandradedev@gmail.com" title="E-mail">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+
+          <button class="flip-btn" id="flip-to-back-btn" data-i18n="btnFront">
+            <i class="fa-solid fa-arrows-rotate"></i> Ver Formações
+            <i class="fa-solid fa-arrows-rotate" style="opacity: 0"></i>
+          </button>
+        </div>
+
+        <!-- VERSO -->
+        <div class="card-face card-back">
+          <h2 data-i18n="titleBack">
+            <i class="fa-solid fa-user-graduate"></i> Formação & Trajetória
+          </h2>
+
+          <ul class="education-list">
+            <li>
+              <strong data-i18n="gradTitle"
+                >Sistemas de Computação (Tecnólogo)</strong
+              >
+              <span data-i18n="gradDesc"
+                >Universidade Federal Fluminense (UFF) — Graduação em
+                Andamento.</span
+              >
+            </li>
+            <li>
+              <strong data-i18n="techSchoolTitle"
+                >Desenvolvedor de Sistemas (Ensino Técnico)</strong
+              >
+              <span data-i18n="techSchoolDesc"
+                >FAETEC - Maria Mercedes Mendes Teixeira.</span
+              >
+            </li>
+            <li>
+              <strong data-i18n="techTitle">Linguagens & Tecnologias</strong>
+              <span data-i18n="techDesc"
+                >JS, TS, React, Java, Python, HTML/CSS, Banco de Dados.</span
+              >
+            </li>
+          </ul>
+
+          <button class="flip-btn" id="flip-to-front-btn" data-i18n="btnBack">
+            <i class="fa-solid fa-arrows-rotate" style="opacity: 0"></i> Voltar
+            à Frente <i class="fa-solid fa-arrows-rotate"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
